@@ -17,15 +17,15 @@ spec:
       project: default
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basename}}'
+        namespace: default
       source:
         repoURL: https://github.com/eyal309/charts.git
         targetRevision: main
         path: '{{path}}'
         helm:
           valueFiles:
-            - ../../common-values.yaml
             - values.yaml
+            - ../../common-values.yaml
       syncPolicy:
         automated:
           prune: true
